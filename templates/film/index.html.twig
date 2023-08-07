@@ -25,8 +25,12 @@
                 <td>{{ film.dateCreation ? film.dateCreation|date('Y-m-d') : '' }}</td>
                 <td>{{ film.description }}</td>
                 <td>
-                    <a href="{{ path('app_film_show', {'id': film.id}) }}">show</a>
-                    <a href="{{ path('app_film_edit', {'id': film.id}) }}">edit</a>
+                    <a href="{{ path('app_film_show', {'id': film.id}) }}">
+                        <button type="button" class="btn btn-success">Show</button>
+                    </a>
+                    <a href="{{ path('app_film_edit', {'id': film.id}) }}">
+                        <button type="button" class="btn btn-warning">Edit</button>
+                    </a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +41,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_film_new') }}">Create new</a>
+    <a href="{{ path('app_film_new') }}">
+        <button type="button" class="btn btn-primary">Create new</button>
+    </a>
 {% endblock %}
