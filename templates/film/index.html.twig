@@ -13,6 +13,7 @@
                 <th>Auteur</th>
                 <th>DateCreation</th>
                 <th>Description</th>
+                <th>Genre</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                 <td>{{ film.auteur }}</td>
                 <td>{{ film.dateCreation ? film.dateCreation|date('Y-m-d') : '' }}</td>
                 <td>{{ film.description }}</td>
+                <td>{{ film.Genre }}</td>
                 <td>
                     <a href="{{ path('app_film_show', {'id': film.id}) }}">
                         <button type="button" class="btn btn-success">Show</button>
