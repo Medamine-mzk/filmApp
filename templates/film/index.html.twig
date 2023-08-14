@@ -46,4 +46,18 @@
     <a href="{{ path('app_film_new') }}">
         <button type="button" class="btn btn-primary">Create new</button>
     </a>
+
+    <div class="row mt-5">
+     {% for film in films %}
+      <div class="col-lg-4 mb-5">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" 
+        src="https://i.pcmag.com/imagery/reviews/05cItXL96l4LE9n02WfDR0h-5..v1582751026.png">
+        <h2 class="fw-normal">{{ film.title }} - [{{ film.genre }}]</h2>
+        <h3 class="fw-normal">Author : {{ film.auteur }}</h2>
+        <p>{{ film.description }}</p>
+        <p><a class="btn btn-secondary" href="{{ path('app_film_show', {'id': film.id}) }}">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+     {% endfor %}
+    </div>
+
 {% endblock %}
